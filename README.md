@@ -1,5 +1,4 @@
 # Powertools
-___
 
 ## Description
 This project provides a set of PowerShell scripts for automating various tasks, including editing, creating new commands, and displaying help information. The scripts are organized in a modular fashion and can be executed based on the specified action.
