@@ -1,0 +1,14 @@
+[
+    {
+        "Commande": "new",
+        "Description": "Crée une nouvelle commande"
+    },
+    {
+        "Commande": "edit",
+        "Description": "Ouvre VSCode avec les fichiers PowerTools"
+    },
+    {
+        "Commande": "help",
+        "Description": "Affiche les commandes disponibles"
+    }
+]
