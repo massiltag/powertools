@@ -10,7 +10,7 @@ Write-Host "=== Commandes PowerTools ===" -ForegroundColor Green
 $powertoolsCommands | Format-Table -Property "Commande", "Description" -AutoSize
 
 # Lister les fichiers .ps1 dans le dossier
-Write-Host "`n=== Scripts PowerTools ===" -ForegroundColor Green
+Write-Host "`n=== Mes scripts ===" -ForegroundColor Green
 $files = Get-ChildItem -Path $scriptPath -Filter *.ps1
 
 # Créer un tableau pour stocker les informations des fichiers
