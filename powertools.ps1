@@ -4,8 +4,13 @@
 param (
     [ValidateSet("edit", "new", "help")]
     [string]$Action,
-    [string]$CommandName
+    [string]$Param1
 )
+
+# Si aucun paramètre n'est fourni, définir Action à "help"
+if (-not $Action) {
+    $Action = "help"
+}
 
 # Définir le chemin du script
 $scriptPath = $PSScriptRoot
@@ -21,7 +26,7 @@ switch ($Action) {
         . (Join-Path -Path $functionPath -ChildPath "Edit.ps1") -scriptPath $scriptPath
     }
     "new" {
-        . (Join-Path -Path $functionPath -ChildPath "New.ps1") -scriptPath $scriptPath -CommandName $CommandName
+        . (Join-Path -Path $functionPath -ChildPath "New.ps1") -scriptPath $scriptPath -CommandName $Param1
     }
     "help" {
         . (Join-Path -Path $functionPath -ChildPath "Help.ps1") -scriptPath $scriptPath -powertoolsCommands $powertoolsCommands
