@@ -24,6 +24,11 @@ In this project, the terms "commands" and "scripts" refer to different aspects o
 * Example: isadmin.ps1, resetwifi.ps1, and backup.ps1 are scripts that implement specific automated tasks.
 
 ## Installation
+### Requirements
+* Powershell
+* Visual Studio Code
+
+### Steps
 1. Clone the repository to your local machine.
 2. Add the folder containing the scripts to your system's `PATH` environment variable to use the scripts from anywhere.
 
