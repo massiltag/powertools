@@ -45,8 +45,9 @@ The main script `powertools.ps1` accepts the following parameters:
 * To display help information: `powertools help` or `pt help`
 
 ## File Structure
+* Root directory : Contains user scripts and automations.
 * `powertools.ps1`: Main script to execute actions.
-* `ptscripts/`: Directory containing the action scripts.
+* `core/`: Directory containing the action commands.
 * `cmd-infos.json`: JSON file containing command names and descriptions.
 
 ## Miscellaneous
@@ -58,9 +59,9 @@ The project uses `windows1252` encoding for files. Ensure your editor is configu
 Feel free to submit issues or pull requests if you have suggestions or improvements.
 
 ### How to add a new command
-1. Create a new script in the `ptscripts/` directory.
+1. Create a new script in the `core/` directory.
 2. Add the new command name to the `ValidateSet` attribute of the `$Action` parameter in the `powertools.ps1` script.
-3. In the `powertools.ps1` script, add a new case for your command in the `switch` statement. Reference the new `.ps1` file that will be created in the `ptscripts/` folder.
+3. In the `powertools.ps1` script, add a new case for your command in the `switch` statement. Reference the new `.ps1` file that will be created in the `core/` folder.
 4. Update the `cmd-infos.json` file with the new command name and description.
 
 ## License

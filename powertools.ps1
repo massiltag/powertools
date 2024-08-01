@@ -14,7 +14,7 @@ if (-not $Action) {
 
 # Définir le chemin du script
 $scriptPath = $PSScriptRoot
-$functionPath = Join-Path -Path $scriptPath -ChildPath "ptscripts"
+$functionPath = Join-Path -Path $scriptPath -ChildPath "core"
 
 # Lire les noms et descriptions des commandes à partir du fichier JSON
 $cmdInfosFile = Join-Path -Path $functionPath -ChildPath "cmd-infos.json"
