@@ -9,7 +9,15 @@ if (-not $CommandName) {
     exit
 }
 
-$filePath = Join-Path -Path $scriptPath -ChildPath "$CommandName.ps1"
+# Crée le chemin du dossier scripts
+$scriptsFolderPath = Join-Path -Path $scriptPath -ChildPath "scripts"
+
+# Vérifie si le dossier scripts existe, sinon le crée
+if (-not (Test-Path -Path $scriptsFolderPath)) {
+    New-Item -ItemType Directory -Path $scriptsFolderPath
+}
+
+$filePath = Join-Path -Path $scriptsFolderPath -ChildPath "$CommandName.ps1"
 
 # Crée le fichier avec le contenu initial
 $content = @"

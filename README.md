@@ -11,17 +11,19 @@ This project provides a set of PowerShell scripts for automating various tasks, 
 * **Comprehensive Help**: Built-in help information for easy reference and usage.
 
 ### How it works
-In this project, the terms "commands" and "scripts" refer to different aspects of the PowerShell automation setup:  
+In this project, the terms "commands" and "scripts" refer to different aspects of the PowerShell automation setup.  
 
 #### Commands:  
-* Commands are specific actions that can be called using the powertools.ps1 script. These are defined by the -Action parameter and include edit, new, and help.
+* Commands are specific actions that can be called using the powertools.ps1 script. These are defined by the -Action parameter and include run, edit, new, and help.
 * Commands are essentially the high-level operations that users can request the script to execute.
-* Example: powertools.ps1 -Action edit or powertools.ps1 -Action new -CommandName MyCommand.
+* They are located under the `core/` folder.
+* Examples: powertools.ps1 -Action edit or powertools.ps1 -Action new -CommandName MyCommand.
 
 #### Scripts:  
 * Scripts are the automated tasks that the user must implement. These scripts are located in the root directory and are executed based on the specified command.
 * These scripts contain the detailed implementation of the tasks.
-* Example: isadmin.ps1, resetwifi.ps1, and backup.ps1 are scripts that implement specific automated tasks.
+* They are located under the `scripts/` folder.
+* Examples: isadmin.ps1, resetwifi.ps1, and backup.ps1 are scripts that implement specific automated tasks.
 
 ## Installation
 ### Requirements
@@ -41,18 +43,21 @@ In this project, the terms "commands" and "scripts" refer to different aspects o
 
 ## Usage
 The main script `powertools.ps1` accepts the following parameters:
-* `-Action`: Specifies the action to perform. Valid values are `edit`, `new`, and `help`.
+* `-Action`: Specifies the action to perform. Some valid values are `run`, `edit`, `new`, and `help`.
 * `-CommandName`: Specifies the name of the command when the `new` action is selected.
 
 ### Examples
-* To edit a command: `powertools edit` or `pt edit`
-* To create a new command: `powertools new commandName` or `pt new commandName`
-* To display help information: `powertools help` or `pt help`
+* To run a command: `powertools run <commandName>`
+* To edit the folder: `powertools edit`
+* To create a new command: `powertools new <commandName>`
+* To display help information: `powertools help`
+`powertools` can be replaced with `px` for a shorthand usage.
 
 ## File Structure
 * Root directory : Contains user scripts and automations.
 * `powertools.ps1`: Main script to execute actions.
-* `core/`: Directory containing the action commands.
+* `core/`: Directory containing the core action commands.
+* `scripts/`: Directory containing the user commands.
 * `cmd-infos.json`: JSON file containing command names and descriptions.
 
 ## Miscellaneous
@@ -63,7 +68,7 @@ The project uses `windows1252` encoding for files. Ensure your editor is configu
 ## Contributing
 Feel free to submit issues or pull requests if you have suggestions or improvements.
 
-### How to add a new command
+### How to add a new core command
 1. Create a new script in the `core/` directory.
 2. Add the new command name to the `ValidateSet` attribute of the `$Action` parameter in the `powertools.ps1` script.
 3. In the `powertools.ps1` script, add a new case for your command in the `switch` statement. Reference the new `.ps1` file that will be created in the `core/` folder.

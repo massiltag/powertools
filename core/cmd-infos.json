@@ -1,7 +1,11 @@
 [
     {
-        "Commande": "new",
-        "Description": "Crée une nouvelle commande"
+        "Commande": "run <scriptName>",
+        "Description": "Lance un script utilisateur"
+    },
+    {
+        "Commande": "new <scriptName>",
+        "Description": "Crée un nouveau script utilisateur"
     },
     {
         "Commande": "edit",

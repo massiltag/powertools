@@ -9,9 +9,10 @@ Get-Content -Path "$PSScriptRoot\misc\header.txt" -Encoding UTF8
 Write-Host "=== Commandes PowerTools ===" -ForegroundColor Green
 $powertoolsCommands | Format-Table -Property "Commande", "Description" -AutoSize
 
-# Lister les fichiers .ps1 dans le dossier
+# Lister les fichiers .ps1 dans le dossier scripts
 Write-Host "`n=== Mes scripts ===" -ForegroundColor Green
-$files = Get-ChildItem -Path $scriptPath -Filter *.ps1
+$scriptsFolderPath = Join-Path -Path $scriptPath -ChildPath "scripts"
+$files = Get-ChildItem -Path $scriptsFolderPath -Filter *.ps1
 
 # Créer un tableau pour stocker les informations des fichiers
 $fileInfo = @()

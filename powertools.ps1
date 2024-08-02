@@ -2,7 +2,7 @@
 # TAGS : powertools
 
 param (
-    [ValidateSet("edit", "new", "help")]
+    [ValidateSet("run", "edit", "new", "help")]
     [string]$Action,
     [string]$Param1
 )
@@ -22,6 +22,9 @@ $powertoolsCommands = Get-Content -Path $cmdInfosFile | ConvertFrom-Json
 
 # Exécution du code associé en fonction du paramètre Action
 switch ($Action) {
+    "run" {
+        . (Join-Path -Path $functionPath -ChildPath "Run.ps1") -scriptPath $scriptPath -ScriptName $Param1
+    }
     "edit" {
         . (Join-Path -Path $functionPath -ChildPath "Edit.ps1") -scriptPath $scriptPath
     }
