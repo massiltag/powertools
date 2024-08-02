@@ -6,12 +6,12 @@ param (
     [string]$Param1
 )
 
-# Si aucun paramètre n'est fourni, définir Action Ã  "help"
+# Si aucun paramètre n'est fourni, définir Action à "help"
 if (-not $Action) {
     $Action = "help"
 }
 
-# Obtient le chemin du dossier oÃ¹ le script est situé
+# Obtient le chemin du dossier où le script est situé
 $scriptPath = $PSScriptRoot
 $powertoolsPath = Join-Path -Path $scriptPath -ChildPath "powertools.ps1"
 
