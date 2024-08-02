@@ -47,10 +47,10 @@ The main script `powertools.ps1` accepts the following parameters:
 * `-CommandName`: Specifies the name of the command when the `new` action is selected.
 
 ### Examples
+* To create a new command: `powertools new <commandName>`
 * To run a command: `powertools run <commandName>`
 * To edit the folder: `powertools edit`
-* To create a new command: `powertools new <commandName>`
-* To display help information: `powertools help`
+* To display help information: `powertools help`  
 `powertools` can be replaced with `px` for a shorthand usage.
 
 ## File Structure
