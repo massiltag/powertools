@@ -4,7 +4,7 @@
 $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 if ($isAdmin) {
-    Write-Output "Le shell est lancé en mode administrateur :)`n"
+    Write-Host "Le shell est lancé en mode administrateur :)" -ForegroundColor Green
 } else {
-    Write-Output "Le shell n'est pas lancé en mode administrateur :(`n"
+    Write-Host "Le shell n'est pas lancé en mode administrateur :(" -ForegroundColor Red
 }
