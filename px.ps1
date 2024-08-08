@@ -3,7 +3,8 @@
 
 param (
     [string]$Action,
-    [string]$Param1
+    [Parameter(ValueFromRemainingArguments=$true)]
+    [string[]]$Arguments
 )
 
 # Si aucun paramètre n'est fourni, définir Action à "help"
@@ -16,4 +17,4 @@ $scriptPath = $PSScriptRoot
 $powertoolsPath = Join-Path -Path $scriptPath -ChildPath "powertools.ps1"
 
 # Appelle powertools.ps1 avec les mêmes paramètres
-& $powertoolsPath -Action $Action -Param1 $Param1
+& $powertoolsPath -Action $Action @Arguments

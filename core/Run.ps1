@@ -1,16 +1,18 @@
 param (
     [string]$scriptPath,
-    [string]$ScriptName
+    [string]$ScriptName,
+    [Parameter(ValueFromRemainingArguments=$true)]
+    [string[]]$Arguments
 )
 
-# Définir le chemin du script à exécuter
+# Define the path of the script to run
 $scriptToRun = Join-Path -Path $scriptPath -ChildPath "scripts\$ScriptName.ps1"
 
-# Vérifier si le script existe
+# Check if the script exists
 if (-Not (Test-Path -Path $scriptToRun)) {
     Write-Host "Le script '$ScriptName' n'existe pas." -ForegroundColor Red
     exit 1
 }
 
-# Exécuter le script
-& $scriptToRun
+# Execute the script with the provided arguments
+& $scriptToRun @Arguments
