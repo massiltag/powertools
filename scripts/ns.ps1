@@ -1,5 +1,5 @@
 # DESCRIPTION : Démarre ou arrête Netskope
-# TAGS : network, netskope
+# TAGS : hacks, network, netskope
 
 param (
     [ValidateSet("start", "stop")]
