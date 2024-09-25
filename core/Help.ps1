@@ -6,7 +6,7 @@ param (
 Get-Content -Path "$PSScriptRoot\misc\header.txt" -Encoding UTF8
 
 # Afficher les commandes powertools
-Write-Host "=== Commandes PowerTools ===" -ForegroundColor Green
+Write-Host "=== Commandes ===" -ForegroundColor Green
 $powertoolsCommands | Format-Table -Property "Commande", "Description" -AutoSize
 
 # Lister les fichiers .ps1 dans le dossier scripts
